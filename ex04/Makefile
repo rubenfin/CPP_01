@@ -3,13 +3,13 @@ CFLAGS = -Wall -Wextra -Werror -g -pedantic -std=c++11
 SRCS = $(wildcard *.cpp) 
 OBJS = $(patsubst %.cpp,obj/%.o,$(SRCS))
 
-TARGET = Brain
+TARGET = Sed
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
-	@echo "$(GREEN)Compiled Brain!$(DEFAULT)"
+	@echo "$(GREEN)Compiled Sed!$(DEFAULT)"
 
 obj/%.o: %.cpp | obj
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -23,7 +23,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(TARGET)
-	@echo "$(RED)Removed Brain!$(DEFAULT)"
+	@echo "$(RED)Removed Sed!$(DEFAULT)"
 
 #COLORS
 RED = \033[1;31m
