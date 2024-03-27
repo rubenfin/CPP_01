@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/23 15:30:43 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/03/23 16:55:49 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/03/27 10:58:26 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,55 @@ void Harl::debug(void)
 {
 	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. ";
-	std::cout << "I really do!\n" << std::endl;
+	std::cout << "I really do!" << std::endl;
 }
 void Harl::info(void)
 {
 	std::cout << "[ INFO ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. " << std::endl;
-	std::cout << "You didn’t put enough bacon in my burger! If you did I wouldn’t be asking for more!\n" << std::endl;
+	std::cout << "You didn’t put enough bacon in my burger! If you did I wouldn’t be asking for more!" << std::endl;
 }
 void Harl::warning(void)
 {
 	std::cout << "[ WARNING ]" << std::endl;
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming foryears whereas you started working here since last month.\n" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming foryears whereas you started working here since last month." << std::endl;
 }
 void Harl::error(void)
 {
 	std::cout << "[ ERROR ]" << std::endl;
-	std::cout << "This is unacceptable! I want to speak to the manager now.\n" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level)
+void	Harl::complain( std::string level )
 {
-	&Harl::level;
+	void	(Harl::*pmf[])() = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+	std::string	levels[] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+	
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i])
+		{
+			(this->*pmf[i])();
+			return;
+		}
+	}
+	std::cout << "\"some useless complaining\"" << std::endl;
+}
+
+Harl::Harl()
+{
+}
+
+Harl::~Harl()
+{
 }

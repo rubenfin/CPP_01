@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/23 15:30:33 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/03/23 15:36:24 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/03/27 10:34:30 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,3 @@ public:
     void complain(std::string level);
 };
 
-Harl::Harl()
-{
-}
-
-Harl::~Harl()
-{
-}

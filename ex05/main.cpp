@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/23 15:30:27 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/03/23 16:56:08 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/03/27 11:01:44 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,16 @@
 
 int	main(int ac, char **av)
 {
-	return (0);
+	std::string level;
+	Harl harl;
+	if (ac == 2)
+	{
+		if (av[1])
+			level = av[1];
+		harl.complain(level);
+		return (0);
+	}
+	else
+		std::cerr << "usage: ./harlFilter <level>" << std::endl;
+	return (1);
 }

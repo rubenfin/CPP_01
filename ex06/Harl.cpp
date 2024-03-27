@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/23 15:30:43 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/03/23 16:55:13 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/03/27 11:11:09 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void Harl::debug(void)
 {
-	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "\n[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. ";
 	std::cout << "I really do!\n" << std::endl;
 }
@@ -75,7 +75,7 @@ void Harl::complain(std::string level)
 		warning();
 		error();
 		break ;
-	default:
+	case ELSE:
 		std::cout << "\"some useless complaining\"" << std::endl;
 		break ;
 	}
